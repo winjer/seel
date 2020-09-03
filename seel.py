@@ -4,7 +4,7 @@ import yaml
 import semver
 
 repo_map = {
-    '999999999999.dkr.ecr.eu-west-2.amazonaws.com/foobar': ['8.1.3', '8.1.2', '8.1.1']
+    '999999999999.dkr.ecr.eu-west-2.amazonaws.com/foobar': ['8.2.0', '8.1.2', '8.1.1']
 }
 
 
@@ -21,7 +21,7 @@ def policy_all(current, args):
     latest = get_latest_semver(available)
     if latest > current:
         return latest
-    return str(current.finalize_version())
+    return current
 
 
 policies = {
